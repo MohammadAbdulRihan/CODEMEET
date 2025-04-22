@@ -1,4 +1,4 @@
-/* custom-theme.css */
+custom-theme.css
 
 /* Editor container styling */
 .editor-container {
@@ -56,7 +56,7 @@
   font-size: 16px;
   color: #ffffff;
   background: linear-gradient(135deg, #0f0c29, #164960, #24243e); /* Deep violet/blue gradient */
-  padding: 15px;
+  padding: 0px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), 0 0 25px rgba(0, 255, 255, 0.15);
   transition: all 0.3s ease;
@@ -94,13 +94,160 @@
   border-right: 1px solid rgba(241, 239, 239, 0.1);
   padding-right: 5px;
   color: transparent; 
+  /* height: 99vh; */
 }
 
 .CodeMirror-linenumber {
-  background: linear-gradient(to right, #00f2fe, #4facfe); /* Cyan to blue gradient */
+  background: linear-gradient(to right, #00f2fe, #2bd54a); /* Cyan to blue gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 14px;
   
+}
+
+
+
+/* Java keyword styling */
+.cm-s-default .cm-keyword {
+  color: #ffcc00; /* Bright yellow for high contrast */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.5); /* Glow effect */
+}
+
+/* Optional: Style for other tokens for theme harmony */
+.cm-s-default .cm-variable {
+  color: #00ffd0;
+}
+
+.cm-s-default .cm-string {
+  color: #8aff80;
+}
+
+.cm-s-default .cm-comment {
+  color: #7fdbff;
+  font-style: italic;
+}
+
+/* ----------------------------------- */
+
+/* Ensure page fills full height */
+html, body {
+  height: 99%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Editor container styling */
+.editor-container {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Editor header styling */
+.editor-header {
+  height: 60px;
+  position: relative;
+  padding: 15px;
+  background-color: #e8e0e0;
+  border-bottom: 2px solid #2c3e50;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Close button styling */
+.editor-header button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.editor-header button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* CodeMirror editor styles */
+.CodeMirror {
+  flex: 1; /* Fills remaining vertical space */
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f0c29, #164960, #24243e); /* Deep violet/blue gradient */
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), 0 0 25px rgba(0, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+/* Java keyword styling */
+.cm-s-default .cm-keyword {
+  color: #ffcc00; /* Bright yellow */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+/* Optional additional syntax styling */
+.cm-s-default .cm-variable {
+  color: #00ffd0;
+}
+
+.cm-s-default .cm-string {
+  color: #8aff80;
+}
+
+.cm-s-default .cm-comment {
+  color: #7fdbff;
+  font-style: italic;
+}
+
+/* Cursor styling */
+.CodeMirror-cursor {
+  border-left: 2px solid #00ffff;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00ffff;
+  }
+}
+
+.CodeMirror-gutters {
+  background-color: transparent;
+  color: #00ffc3;
+  border: none;
+  border-right: 1px solid rgba(241, 239, 239, 0.1);
+  padding-right: 5px;
+}
+
+.CodeMirror-linenumber {
+  background: linear-gradient(to right, #00f2fe, #2bd54a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.CodeMirror-selected {
+  background-color: rgba(0, 255, 255, 0.3) !important;
 }
